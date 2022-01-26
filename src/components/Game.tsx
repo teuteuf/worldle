@@ -14,6 +14,8 @@ import * as geolib from "geolib";
 import { Share } from "./Share";
 import { Guesses } from "./Guesses";
 import { useTranslation } from "react-i18next";
+import { SettingsData } from "../hooks/useSettings";
+import { useHideImageMode } from "../hooks/useHideImageMode";
 
 function getDayString() {
   return DateTime.now().toFormat("yyyy-MM-dd");
@@ -21,7 +23,11 @@ function getDayString() {
 
 const MAX_TRY_COUNT = 6;
 
-export function Game() {
+interface GameProps {
+  settingsData: SettingsData;
+}
+
+export function Game({ settingsData }: GameProps) {
   const { t, i18n } = useTranslation();
   const dayString = useMemo(getDayString, []);
   const country = useMemo(
@@ -34,6 +40,10 @@ export function Game() {
 
   const [currentGuess, setCurrentGuess] = useState("");
   const [guesses, addGuess] = useGuesses(dayString);
+  const [hideImageMode, setHideImageMode] = useHideImageMode(
+    dayString,
+    settingsData.noImageMode
+  );
 
   const gameEnded =
     guesses.length === MAX_TRY_COUNT ||
@@ -83,15 +93,29 @@ export function Game() {
 
   return (
     <div className="flex flex-col mx-2">
-      <img
-        className="max-h-52 my-1"
-        alt="country to guess"
-        src={`images/countries/${country.code.toLowerCase()}/vector.svg`}
-      />
+      {hideImageMode ? (
+        <button
+          className="border-2 uppercase my-2 hover:bg-gray-50 active:bg-gray-100"
+          type="button"
+          onClick={() => setHideImageMode(false)}
+        >
+          {t("showCountry")}
+        </button>
+      ) : (
+        <img
+          className="max-h-52 my-1"
+          alt="country to guess"
+          src={`images/countries/${country.code.toLowerCase()}/vector.svg`}
+        />
+      )}
       <Guesses rowCount={MAX_TRY_COUNT} guesses={guesses} />
       <div className="my-2">
         {gameEnded ? (
-          <Share guesses={guesses} dayString={dayString} />
+          <Share
+            guesses={guesses}
+            dayString={dayString}
+            hideImageMode={hideImageMode}
+          />
         ) : (
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col">

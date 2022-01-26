@@ -12,9 +12,10 @@ const START_DATE = DateTime.fromISO("2022-01-21");
 interface ShareProps {
   guesses: Guess[];
   dayString: string;
+  hideImageMode: boolean;
 }
 
-export function Share({ guesses, dayString }: ShareProps) {
+export function Share({ guesses, dayString, hideImageMode }: ShareProps) {
   const { t } = useTranslation();
 
   const shareText = useMemo(() => {
@@ -25,7 +26,8 @@ export function Share({ guesses, dayString }: ShareProps) {
         "day"
       )
     );
-    const title = `Worldle #${dayCount} ${guessCount}/6`;
+    const hiddenModeEmoji = hideImageMode ? " 🙈" : "";
+    const title = `Worldle #${dayCount} ${guessCount}/6${hiddenModeEmoji}`;
 
     const guessString = guesses
       .map((guess) => {
@@ -40,7 +42,7 @@ export function Share({ guesses, dayString }: ShareProps) {
       .join("\n");
 
     return [title, guessString, "https://worldle.teuteuf.fr"].join("\n");
-  }, [dayString, guesses]);
+  }, [dayString, guesses, hideImageMode]);
 
   return (
     <CopyToClipboard

@@ -9,7 +9,7 @@ interface InfosProps {
 
 export function Infos({ isOpen, close }: InfosProps) {
   return (
-    <Panel isOpen={isOpen} close={close}>
+    <Panel title="How to play" isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
           Guess the{" "}
