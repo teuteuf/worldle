@@ -5,19 +5,21 @@ import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { computeProximityPercent } from "../domain/geography";
 import { Guess } from "../domain/guess";
+import React from "react";
 
 const START_DATE = DateTime.fromISO("2022-01-21");
 
 interface ShareProps {
-  guesses: Guess[]
-  dayString: string
+  guesses: Guess[];
+  dayString: string;
 }
 
-export function Share({guesses, dayString}: ShareProps) {
+export function Share({ guesses, dayString }: ShareProps) {
   const { t } = useTranslation();
 
   const shareText = useMemo(() => {
-    const guessCount = guesses[guesses.length - 1]?.distance === 0 ? guesses.length : "X";
+    const guessCount =
+      guesses[guesses.length - 1]?.distance === 0 ? guesses.length : "X";
     const dayCount = Math.floor(
       Interval.fromDateTimes(START_DATE, DateTime.fromISO(dayString)).length(
         "day"
@@ -39,17 +41,17 @@ export function Share({guesses, dayString}: ShareProps) {
 
     return [title, guessString, "https://worldle.teuteuf.fr"].join("\n");
   }, [dayString, guesses]);
-  
+
   return (
     <CopyToClipboard
       text={shareText}
-      onCopy={() => toast(t('copy'))}
+      onCopy={() => toast(t("copy"))}
       options={{
-        format: 'text/plain'
+        format: "text/plain",
       }}
     >
       <button className="border-2 px-4 uppercase bg-green-600 hover:bg-green-500 active:bg-green-700 text-white w-full">
-        {t('share')}
+        {t("share")}
       </button>
     </CopyToClipboard>
   );

@@ -6,7 +6,9 @@ function loadAllGuesses(): Record<string, Guess[]> {
   return storedGuesses != null ? JSON.parse(storedGuesses) : {};
 }
 
-export function useGuesses(dayString: string): [Guess[], (guess: Guess) => void] {
+export function useGuesses(
+  dayString: string
+): [Guess[], (guess: Guess) => void] {
   const [guesses, setGuesses] = useState<Guess[]>(
     loadAllGuesses()[dayString] ?? []
   );
@@ -25,12 +27,15 @@ export function useGuesses(dayString: string): [Guess[], (guess: Guess) => void]
     [dayString]
   );
 
-  const addGuess = useCallback((newGuess: Guess) => {
-    const newGuesses = [...guesses, newGuess];
+  const addGuess = useCallback(
+    (newGuess: Guess) => {
+      const newGuesses = [...guesses, newGuess];
 
-    setGuesses(newGuesses);
-    saveGuesses(newGuesses);
-  }, [guesses, saveGuesses])
+      setGuesses(newGuesses);
+      saveGuesses(newGuesses);
+    },
+    [guesses, saveGuesses]
+  );
 
   return [guesses, addGuess];
 }

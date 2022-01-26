@@ -1,5 +1,6 @@
 import { Guesses } from "../Guesses";
 import { Panel } from "./Panel";
+import React from "react";
 
 interface InfosProps {
   isOpen: boolean;
@@ -11,6 +12,7 @@ export function InfosFr({ isOpen, close }: InfosProps) {
     <Panel isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
+          {" "}
           Devine le{" "}
           <span className="font-bold">
             WOR<span className="text-green-600">L</span>DLE
@@ -74,7 +76,7 @@ export function InfosFr({ isOpen, close }: InfosProps) {
           />
           <div className="my-2">
             Prochain essai, <span className="uppercase font-bold">Liban</span>,
-            c'est le pays à deviner ! Bien joué ! 🎉
+            c&apos;est le pays à deviner ! Bien joué ! 🎉
           </div>
         </div>
       </div>

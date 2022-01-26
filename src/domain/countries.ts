@@ -248,10 +248,10 @@ const countryCodesWithImage = [
 ];
 
 interface Country {
-  code: string
-  latitude: number
-  longitude: number
-  name: string
+  code: string;
+  latitude: number;
+  longitude: number;
+  name: string;
 }
 
 export const countries: Country[] = [
@@ -1131,9 +1131,8 @@ const frenchCountryNames: Record<string, string> = {
   XK: "Kosovo",
 };
 
-
-export function getCountryName (language: string, country: Country) {
-  if (language === 'fr') {
+export function getCountryName(language: string, country: Country) {
+  if (language === "fr") {
     return frenchCountryNames[country.code];
   }
   return country.name;
@@ -1143,6 +1142,6 @@ export function sanitizeCountryName(countryName: string): string {
   return countryName
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[- ']/g, '')
+    .replace(/[- ']/g, "")
     .toLowerCase();
 }

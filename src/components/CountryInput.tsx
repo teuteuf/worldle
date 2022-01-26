@@ -1,8 +1,12 @@
 import { t } from "i18next";
-import { useState } from "react";
+import React, { useState } from "react";
 import Autosuggest from "react-autosuggest";
 import { useTranslation } from "react-i18next";
-import { countries, getCountryName, sanitizeCountryName } from "../domain/countries";
+import {
+  countries,
+  getCountryName,
+  sanitizeCountryName,
+} from "../domain/countries";
 
 interface CountryInputProps {
   currentGuess: string;
@@ -24,7 +28,11 @@ export function CountryInput({
         setSuggestions(
           countries
             .map((c) => getCountryName(i18n.resolvedLanguage, c).toUpperCase())
-            .filter((countryName) => sanitizeCountryName(countryName).includes(sanitizeCountryName(value)))
+            .filter((countryName) =>
+              sanitizeCountryName(countryName).includes(
+                sanitizeCountryName(value)
+              )
+            )
         )
       }
       onSuggestionsClearRequested={() => setSuggestions([])}
@@ -37,7 +45,7 @@ export function CountryInput({
       }}
       inputProps={{
         className: "w-full",
-        placeholder: t('placeholder'),
+        placeholder: t("placeholder"),
         value: currentGuess,
         onChange: (_e, { newValue }) => setCurrentGuess(newValue),
       }}

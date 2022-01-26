@@ -1,8 +1,13 @@
 import { DateTime } from "luxon";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
 import seedrandom from "seedrandom";
-import { countries, countriesWithImage, getCountryName, sanitizeCountryName } from "../domain/countries";
+import {
+  countries,
+  countriesWithImage,
+  getCountryName,
+  sanitizeCountryName,
+} from "../domain/countries";
 import { useGuesses } from "../hooks/useGuesses";
 import { CountryInput } from "./CountryInput";
 import * as geolib from "geolib";
@@ -30,17 +35,22 @@ export function Game() {
   const [currentGuess, setCurrentGuess] = useState("");
   const [guesses, addGuess] = useGuesses(dayString);
 
-  const gameEnded = guesses.length === MAX_TRY_COUNT || guesses[guesses.length - 1]?.distance === 0;
+  const gameEnded =
+    guesses.length === MAX_TRY_COUNT ||
+    guesses[guesses.length - 1]?.distance === 0;
 
   const handleSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const guessedCountry = countries.find(
-        (country) => sanitizeCountryName(getCountryName(i18n.resolvedLanguage,country)) === sanitizeCountryName(currentGuess)
+        (country) =>
+          sanitizeCountryName(
+            getCountryName(i18n.resolvedLanguage, country)
+          ) === sanitizeCountryName(currentGuess)
       );
 
       if (guessedCountry == null) {
-        toast.error(t('unknownCountry'));
+        toast.error(t("unknownCountry"));
         return;
       }
 
@@ -54,15 +64,20 @@ export function Game() {
       setCurrentGuess("");
 
       if (newGuess.distance === 0) {
-        toast.success(t('welldone'));
+        toast.success(t("welldone"));
       }
     },
     [addGuess, country, currentGuess, i18n.resolvedLanguage, t]
   );
 
   useEffect(() => {
-    if (guesses.length === MAX_TRY_COUNT && guesses[guesses.length - 1]!.distance > 0) {
-      toast.info(getCountryName(i18n.resolvedLanguage,country).toUpperCase(), { autoClose: false });
+    if (
+      guesses.length === MAX_TRY_COUNT &&
+      guesses[guesses.length - 1].distance > 0
+    ) {
+      toast.info(getCountryName(i18n.resolvedLanguage, country).toUpperCase(), {
+        autoClose: false,
+      });
     }
   }, [country, guesses, i18n.resolvedLanguage]);
 
@@ -73,10 +88,7 @@ export function Game() {
         alt="country to guess"
         src={`images/countries/${country.code.toLowerCase()}/vector.svg`}
       />
-      <Guesses
-        rowCount={MAX_TRY_COUNT}
-        guesses={guesses}
-      />
+      <Guesses rowCount={MAX_TRY_COUNT} guesses={guesses} />
       <div className="my-2">
         {gameEnded ? (
           <Share guesses={guesses} dayString={dayString} />
@@ -91,7 +103,7 @@ export function Game() {
                 className="border-2 uppercase my-0.5 hover:bg-gray-50 active:bg-gray-100"
                 type="submit"
               >
-                🌍 {t('guess')}
+                🌍 {t("guess")}
               </button>
             </div>
           </form>

@@ -1,28 +1,28 @@
 import i18n from "i18next";
-import LanguageDetector from 'i18next-browser-languagedetector';
+import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
 const resources = {
   en: {
     translation: {
-      "placeholder": "Country, territory...",
-      "guess": "Guess",
-      "share": "Share",
-      "welldone": "Well done!",
-      "unknownCountry": "Unknown country!",
-      "copy": "Copied results to clipboard"
-    }
+      placeholder: "Country, territory...",
+      guess: "Guess",
+      share: "Share",
+      welldone: "Well done!",
+      unknownCountry: "Unknown country!",
+      copy: "Copied results to clipboard",
+    },
   },
   fr: {
     translation: {
-      "placeholder": "Pays, territoires...",
-      "guess": "Deviner",
-      "share": "Partager",
-      "welldone": "Bien joué !",
-      "unknownCountry": "Pays inconnu !",
-      "copy": "Résultat copié !"
-    }
-  }
+      placeholder: "Pays, territoires...",
+      guess: "Deviner",
+      share: "Partager",
+      welldone: "Bien joué !",
+      unknownCountry: "Pays inconnu !",
+      copy: "Résultat copié !",
+    },
+  },
 };
 
 i18n
@@ -31,8 +31,8 @@ i18n
   .init({
     resources,
     interpolation: {
-      escapeValue: false
-    }
+      escapeValue: false,
+    },
   });
 
-  export default i18n;
+export default i18n;

@@ -1,5 +1,6 @@
 import { Guesses } from "../Guesses";
 import { Panel } from "./Panel";
+import React from "react";
 
 interface InfosProps {
   isOpen: boolean;
@@ -40,7 +41,7 @@ export function Infos({ isOpen, close }: InfosProps) {
             Your guess <span className="uppercase font-bold">Chile</span> is
             13557km away from the target country, the target country is in the
             North-East direction and you have a only 32% of proximity because
-            it's quite far away!
+            it&apos;s quite far away!
           </div>
         </div>
         <div>
@@ -73,7 +74,7 @@ export function Infos({ isOpen, close }: InfosProps) {
           />
           <div className="my-2">
             Next guess, <span className="uppercase font-bold">Lebanon</span>,
-            it's the country to guess! Congrats! 🎉
+            it&apos;s the country to guess! Congrats! 🎉
           </div>
         </div>
       </div>
