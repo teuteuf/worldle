@@ -20,7 +20,7 @@ import { Guesses } from "./Guesses";
 import { useTranslation } from "react-i18next";
 import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
-import { useCountry } from "../hooks/useCountry";
+import { useCountry, useRandomCountry } from "../hooks/useCountry";
 
 function getDayString() {
   return DateTime.now().toFormat("yyyy-MM-dd");
@@ -34,11 +34,18 @@ interface GameProps {
 
 export function Game({ settingsData }: GameProps) {
   const { t, i18n } = useTranslation();
-  const dayString = useMemo(getDayString, []);
+  const dayString = useMemo(
+    () => (settingsData.useRandomCountry ? "Random" : getDayString()),
+    [settingsData.useRandomCountry]
+  );
 
   const countryInputRef = useRef<HTMLInputElement>(null);
 
-  const [country, randomAngle, imageScale] = useCountry(dayString);
+  const countryFunc = settingsData.useRandomCountry
+    ? useRandomCountry
+    : useCountry;
+
+  const [country, randomAngle, imageScale] = countryFunc(dayString);
 
   const [currentGuess, setCurrentGuess] = useState("");
   const [guesses, addGuess] = useGuesses(dayString);
@@ -102,6 +109,17 @@ export function Game({ settingsData }: GameProps) {
 
   return (
     <div className="flex-grow flex flex-col mx-2">
+      <div>
+        {settingsData.useRandomCountry && (
+          <button
+            className="mx-3 text-xl"
+            type="button"
+            onClick={() => window.location.reload()}
+          >
+            🔄
+          </button>
+        )}
+      </div>
       {hideImageMode && !gameEnded && (
         <button
           className="border-2 uppercase my-2 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"

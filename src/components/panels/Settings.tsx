@@ -63,6 +63,26 @@ export function Settings({
       <div className="my-4">
         <header className="my-2">
           <h3 className="text-lg font-bold">
+            {t("settings.gameModeSelection")}
+          </h3>
+        </header>
+        <div className="flex p-1">
+          <input
+            type="checkbox"
+            id="setting-rotationMode"
+            checked={settingsData.useRandomCountry}
+            onChange={(e) =>
+              updateSettings({ useRandomCountry: e.target.checked })
+            }
+          />
+          <label className="flex-1 ml-2" htmlFor="setting-rotationMode">
+            {t("settings.rotationMode")}
+          </label>
+        </div>
+      </div>
+      <div className="my-4">
+        <header className="my-2">
+          <h3 className="text-lg font-bold">
             {t("settings.difficultyModifiers")}
           </h3>
           <div className="text-sm italic text-gray-500">

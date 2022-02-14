@@ -4,13 +4,15 @@ export interface SettingsData {
   noImageMode: boolean;
   rotationMode: boolean;
   distanceUnit: "km" | "miles";
+  useRandomCountry: boolean;
   theme: "light" | "dark";
 }
 
 const defaultSettingsData: SettingsData = {
   noImageMode: false,
   rotationMode: false,
-  distanceUnit: "km",
+  useRandomCountry: false,
+  distanceUnit: "miles",
   theme: window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light",
