@@ -69,14 +69,14 @@ export function Settings({
         <div className="flex p-1">
           <input
             type="checkbox"
-            id="setting-rotationMode"
+            id="setting-gameMode"
             checked={settingsData.useRandomCountry}
             onChange={(e) =>
               updateSettings({ useRandomCountry: e.target.checked })
             }
           />
-          <label className="flex-1 ml-2" htmlFor="setting-rotationMode">
-            {t("settings.rotationMode")}
+          <label className="flex-1 ml-2" htmlFor="setting-gameMode">
+            {t("settings.useRandomCountry")}
           </label>
         </div>
       </div>

@@ -20,6 +20,7 @@ const resources = {
         theme: "Theme",
         difficultyModifiers: "Difficulty modifiers",
         gameModeSelection: "Game Mode Selection",
+        useRandomCountry: "Use a random country on each refresh instead.",
         startingNextDay: "Starting the next day!",
         noImageMode: "Hide country image for more of a challenge.",
         rotationMode: "Randomly rotate country image.",
@@ -44,6 +45,8 @@ const resources = {
         theme: "Thème",
         difficultyModifiers: "Modificateurs de difficulté",
         gameModeSelection: "Partie mode de jeu. (Game Mode Selection)",
+        useRandomCountry:
+          "Utilisez un pays aléatoire à chaque actualisation au lieu. (Use a random country on each refresh instead)",
         startingNextDay: "A partir du lendemain !",
         noImageMode: "Cache l'image du pays pour plus de challenge.",
         rotationMode: "Tourne l'image du pays de manière aléatoire.",

@@ -20,10 +20,14 @@ import { Guesses } from "./Guesses";
 import { useTranslation } from "react-i18next";
 import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
-import { useCountry, useRandomCountry } from "../hooks/useCountry";
+import { useCountry } from "../hooks/useCountry";
 
 function getDayString() {
   return DateTime.now().toFormat("yyyy-MM-dd");
+}
+
+function getRandomSeed() {
+  return Math.floor(Math.random() * countries.length).toString();
 }
 
 const MAX_TRY_COUNT = 6;
@@ -34,18 +38,31 @@ interface GameProps {
 
 export function Game({ settingsData }: GameProps) {
   const { t, i18n } = useTranslation();
+
+  const randomNumber = getRandomSeed();
+
+  let dayStringMemoVal: null | string = null;
+
+  const currentRandomCountrySeed = localStorage.getItem(
+    "current-random-country"
+  );
+
+  if (!currentRandomCountrySeed) {
+    localStorage.setItem("current-random-country", randomNumber);
+  }
+
+  if (currentRandomCountrySeed !== null && settingsData.useRandomCountry) {
+    dayStringMemoVal = currentRandomCountrySeed;
+  }
+
   const dayString = useMemo(
-    () => (settingsData.useRandomCountry ? "Random" : getDayString()),
-    [settingsData.useRandomCountry]
+    () => (dayStringMemoVal === null ? getDayString() : dayStringMemoVal),
+    [dayStringMemoVal]
   );
 
   const countryInputRef = useRef<HTMLInputElement>(null);
 
-  const countryFunc = settingsData.useRandomCountry
-    ? useRandomCountry
-    : useCountry;
-
-  const [country, randomAngle, imageScale] = countryFunc(dayString);
+  const [country, randomAngle, imageScale] = useCountry(dayString);
 
   const [currentGuess, setCurrentGuess] = useState("");
   const [guesses, addGuess] = useGuesses(dayString);
@@ -114,7 +131,10 @@ export function Game({ settingsData }: GameProps) {
           <button
             className="mx-3 text-xl"
             type="button"
-            onClick={() => window.location.reload()}
+            onClick={() => {
+              localStorage.setItem("current-random-country", getRandomSeed());
+              window.location.reload();
+            }}
           >
             🔄
           </button>
