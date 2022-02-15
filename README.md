@@ -1,9 +1,6 @@
 # Wor**l**dle
 
-Play this geographical wordle here: https://worldle.erikparawell.com !
-
-What this fork was based on:
-https://worldle.teuteuf.fr !
+Play this geographical wordle here: https://worldle.teuteuf.fr !
 
 ## Resources used:
 
