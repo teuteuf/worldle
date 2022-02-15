@@ -401,7 +401,7 @@ export const countries: Country[] = [
     code: "CZ",
     latitude: 49.817492,
     longitude: 15.472962,
-    name: "Czech Republic",
+    name: "Czechia",
   },
   { code: "DE", latitude: 51.165691, longitude: 10.451526, name: "Germany" },
   { code: "DJ", latitude: 11.825138, longitude: 42.590275, name: "Djibouti" },
