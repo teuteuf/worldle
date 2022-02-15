@@ -12,7 +12,7 @@ const defaultSettingsData: SettingsData = {
   noImageMode: false,
   rotationMode: false,
   useRandomCountry: false,
-  distanceUnit: "miles",
+  distanceUnit: "km",
   theme: window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light",
