@@ -49,6 +49,52 @@ const resources = {
       buyMeACoffee: "Offrez moi un ☕ !",
     },
   },
+  es: {
+    translation: {
+      placeholder: "País, Territorios...",
+      guess: "Adivinar",
+      share: "Compartir",
+      showOnGoogleMaps: "👀 en Google Maps",
+      welldone: "Bien hecho !",
+      unknownCountry: "País desconocido !",
+      copy: "Resultado copiado !",
+      showCountry: "🗺️ mostrar mapa !",
+      cancelRotation: "🌀 Anular la rotacíon",
+      settings: {
+        title: "Parámetros",
+        distanceUnit: "Unidad de distancia",
+        theme: "Tema",
+        difficultyModifiers: "Modificador de dificultad",
+        startingNextDay: "A partir de mañana!",
+        noImageMode: "Oculte la imagen del país para un mayor desafío.",
+        rotationMode: "Gira la imagen del país aleatoriamente.",
+      },
+      buyMeACoffee: "Ofrézcame un ☕ !",
+    },
+  },
+  es: {
+    translation: {
+      placeholder: "Estatua, herrialdeak...",
+      guess: "Asmatu",
+      share: "Elkarbanatu",
+      showOnGoogleMaps: "👀 Google Maps-en",
+      welldone: "Ongi egina !",
+      unknownCountry: "Estatu ezezaguna !",
+      copy: "Emaitzak arbelean kopiatuta !",
+      showCountry: "🗺️ Erakutsi mapan !",
+      cancelRotation: "🌀 Ezeztatu errotazioa",
+      settings: {
+        title: "Aukerak",
+        distanceUnit: "Distantzia unitateak",
+        theme: "Gaia",
+        difficultyModifiers: "Zailtasun aldagaiak",
+        startingNextDay: "Aldaketak bihartik aurrera ikusgai!",
+        noImageMode: "Ezkutatu herriaren irudia zailagoa egiteko.",
+        rotationMode: "Errotatu ausaz herrialdearen irudia.",
+      },
+      buyMeACoffee: "☕ bat eskaini iezaidazu !",
+    },
+  },
 };
 
 i18n
