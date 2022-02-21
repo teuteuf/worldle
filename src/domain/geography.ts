@@ -39,6 +39,27 @@ const DIRECTION_ARROWS: Record<Direction, string> = {
   NNW: "↖️",
 };
 
+export function getCompassDirection(bearing: number): Direction {
+  switch (Math.round(bearing / 45)) {
+    case 1:
+      return "NE";
+    case 2:
+      return "E";
+    case 3:
+      return "SE";
+    case 4:
+      return "S";
+    case 5:
+      return "SW";
+    case 6:
+      return "W";
+    case 7:
+      return "NW";
+    default:
+      return "N";
+  }
+}
+
 export function getDirectionEmoji(guess: Guess) {
   return guess.distance === 0 ? "🎉" : DIRECTION_ARROWS[guess.direction];
 }

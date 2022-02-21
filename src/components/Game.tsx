@@ -12,6 +12,7 @@ import {
   getCountryName,
   sanitizeCountryName,
 } from "../domain/countries";
+import { getCompassDirection } from "../domain/geography";
 import { useGuesses } from "../hooks/useGuesses";
 import { CountryInput } from "./CountryInput";
 import * as geolib from "geolib";
@@ -72,10 +73,12 @@ export function Game({ settingsData }: GameProps) {
         return;
       }
 
+      const bearing = geolib.getGreatCircleBearing(guessedCountry, country);
+
       const newGuess = {
         name: currentGuess,
         distance: geolib.getDistance(guessedCountry, country),
-        direction: geolib.getCompassDirection(guessedCountry, country),
+        direction: getCompassDirection(bearing),
       };
 
       addGuess(newGuess);
