@@ -13,19 +13,15 @@ interface InfosProps {
 
 export function Infos({ isOpen, close, settingsData }: InfosProps) {
   return (
-    <Panel title="How to play" isOpen={isOpen} close={close}>
+    <Panel title="Como Jogar" isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
-          Guess the <Worldle /> in 6 guesses.
+          Descubra o <Worldle /> em 6 tentativas.
         </div>
-        <div>Each guess must be a valid country, territory, ...</div>
-        <div>
-          After each guess, you will have the distance, the direction and the
-          proximity from your guess and the target country.
-        </div>
+        <div>Cada tentativa precisa ser um país válido...</div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <div className="font-bold">Examples</div>
+        <div className="font-bold">Exemplos</div>
         <div>
           <Guesses
             rowCount={1}
@@ -39,11 +35,9 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            Your guess <span className="uppercase font-bold">Chile</span> is{" "}
-            {formatDistance(13557000, settingsData.distanceUnit)} away from the
-            target country, the target country is in the North-East direction
-            and you have a only 32% of proximity because it&apos;s quite far
-            away!
+            O <span className="uppercase font-bold">Chile</span> está{" "}
+            {formatDistance(13557000, settingsData.distanceUnit)} de distância.
+            A resposta correta está mais ao Noroeste.
           </div>
         </div>
         <div>
@@ -51,7 +45,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Finland",
+                name: "Finlândia",
                 direction: "SE",
                 distance: 3_206_000,
               },
@@ -59,10 +53,10 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            Your second guess{" "}
-            <span className="uppercase font-bold">Finland</span> is getting
-            closer! {formatDistance(3206000, settingsData.distanceUnit)} away,
-            South-East direction and 84%!
+            Sua segunda tentativa{" "}
+            <span className="uppercase font-bold">Finlândia</span> está mais
+            perto! {formatDistance(3206000, settingsData.distanceUnit)} de
+            distância! a resposta correta está mais ao Sudoeste.
           </div>
         </div>
         <div>
@@ -70,7 +64,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Lebanon",
+                name: "Líbano",
                 direction: "N",
                 distance: 0,
               },
@@ -78,29 +72,16 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            Next guess, <span className="uppercase font-bold">Lebanon</span>,
-            it&apos;s the country to guess! Congrats! 🎉
+            O <span className="uppercase font-bold">Líbano </span>
+            está correto! Parabéns! 🎉
           </div>
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3 font-bold">
-        A new <Worldle /> will be available every day!
+        Volte amanhã para um novo país!
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <div className="font-bold">About distance</div>
-        <div>
-          The distances displayed correspond to the distances between the
-          selected and the target territory centers.
-        </div>
-        <div>
-          For instance, the computed distance between United States and Canada
-          is around {formatDistance(2_260_000, settingsData.distanceUnit)} even
-          if they have a common border.
-        </div>
-      </div>
-      <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <Worldle /> has been <span className="font-bold">heavily</span> inspired
-        by{" "}
+        <Worldle /> foi <span className="font-bold">inpirado</span> por{" "}
         <a
           className="underline"
           href="https://www.powerlanguage.co.uk/wordle/"
@@ -109,38 +90,37 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         >
           Wordle
         </a>{" "}
-        created by{" "}
-        <a
-          className="underline"
-          href="https://twitter.com/powerlanguish"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Josh Wardle (@powerlanguish)
-        </a>
-        .
       </div>
       <div className="space-y-3 text-justify pb-3">
         <div>
-          Made by{" "}
+          Feito por{" "}
           <a
             className="underline"
             href="https://twitter.com/teuteuf"
             target="_blank"
             rel="noopener noreferrer"
           >
-            @teuteuf
+            @teuteuf{" "}
           </a>
-        </div>
-        <div>
-          Want to support?{" "}
+          e traduzido por{" "}
           <a
             className="underline"
-            href="https://www.ko-fi.com/teuteuf"
+            href="https://twitter.com/eraizel"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Buy me a coffee! ☕
+            @eraizel{" "}
+          </a>
+        </div>
+        <div>
+          Gostou do jogo?{" "}
+          <a
+            className="underline"
+            href="https://ko-fi.com/eraizel"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            compre um cafezinho para mim! ☕
           </a>
         </div>
       </div>
