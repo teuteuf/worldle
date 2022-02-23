@@ -49,7 +49,7 @@ export function Share({
     const bestPercent = `(${computeProximityPercent(
       bestDistance
     ).toString()}%)`;
-    const title = `#Worldle #${dayCount} ${guessCount}/6 ${bestPercent}${difficultyModifierEmoji}`;
+    const title = `#Mundlo #${dayCount} ${guessCount}/6 ${bestPercent}${difficultyModifierEmoji}`;
 
     const guessString = guesses
       .map((guess) => {

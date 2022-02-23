@@ -16,7 +16,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
     <Panel title="Como Jogar" isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
-          Descubra o <Worldle /> em 6 tentativas.
+          Descubra em que parte do <Worldle /> nós estamos em 6 tentativas.
         </div>
         <div>Cada tentativa precisa ser um país válido...</div>
       </div>

@@ -26,11 +26,11 @@ const resources = {
       stats: {
         title: "Statísticas",
         played: "Jogados",
-        win: "Vit'rias %",
-        currentStreak: "Número de Vitórias",
-        maxStreak: "Maior número de vitórias consecutivas",
+        win: "Vitórias %",
+        currentStreak: "Vitórias",
+        maxStreak: "Vitórias Consecutivas",
         averageBestDistance: "Melhor média de distâncias",
-        guessDistribution: "Distribuição das tentativas:",
+        guessDistribution: "Média de Acertos",
       },
       install: {
         title: "Mundlo",

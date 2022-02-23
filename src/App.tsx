@@ -79,7 +79,7 @@ function App() {
               <InstallButton pwaInstall={pwaInstall} />
             )}
             <h1 className="text-4xl font-bold uppercase tracking-wide text-center my-1 flex-auto">
-              Wor<span className="text-green-600">l</span>dle
+              Mun<span className="text-green-600">d</span>lo
             </h1>
             <button
               className="ml-3 text-xl"
@@ -101,7 +101,7 @@ function App() {
             ❤️ <Worldle />? -
             <a
               className="underline pl-1"
-              href="https://www.ko-fi.com/teuteuf"
+              href="https://ko-fi.com/eraizel"
               target="_blank"
               rel="noopener noreferrer"
             >
