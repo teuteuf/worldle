@@ -71,6 +71,7 @@ export function Game({ settingsData }: GameProps) {
       const newGuess = {
         name: currentGuess,
         distance: geolib.getDistance(guessedCountry, country),
+        preciseDirection: geolib.getRhumbLineBearing(guessedCountry, country),
         direction: geolib.getCompassDirection(
           guessedCountry,
           country,

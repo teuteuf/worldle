@@ -2,7 +2,6 @@ import {
   computeProximityPercent,
   formatDistance,
   generateSquareCharacters,
-  getDirectionEmoji,
 } from "../domain/geography";
 import { Guess } from "../domain/guess";
 import React, { useCallback, useEffect, useState } from "react";
@@ -99,7 +98,15 @@ export function GuessRow({
             {guess && formatDistance(guess.distance, distanceUnit)}
           </div>
           <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal">
-            {guess && <Twemoji text={getDirectionEmoji(guess)} />}
+            {guess && (
+              <span
+                style={{
+                  transform: `rotate(${guess.preciseDirection - 90}deg)`,
+                }}
+              >
+                ➜
+              </span>
+            )}
           </div>
           <div className="flex items-center justify-center border-2 h-8 col-span-1 animate-reveal animate-pop">
             {`${proximity}%`}
