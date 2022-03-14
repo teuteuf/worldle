@@ -20,3 +20,4 @@ Otherwise, feel free to fork the project, customize it and play with it on your 
 - French country names => https://fr.wikipedia.org/wiki/ISO_3166
 - Country images => https://github.com/djaiss/mapsicon
 - Fixed images => http://www.amcharts.com/svg-maps/
+- World icon => https://github.com/twitter/twemoji
