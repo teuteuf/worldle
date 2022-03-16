@@ -16,7 +16,11 @@ export function getDayString(shiftDayCount?: number) {
 }
 
 export function randomDate(start: Date, end: Date) {
-  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  const date = new Date(
+    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+  );
+
+  return DateTime.fromJSDate(date).plus({ days: 0 }).toFormat("yyyy-MM-dd");
 }
 
 const d = randomDate(new Date(2012, 0, 1), new Date());

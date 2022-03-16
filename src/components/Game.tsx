@@ -19,10 +19,11 @@ import { Guesses } from "./Guesses";
 import { useTranslation } from "react-i18next";
 import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
-import { getDayString, useTodays } from "../hooks/useTodays";
+import { getDayString, randomDate, useTodays } from "../hooks/useTodays";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 
 const MAX_TRY_COUNT = 6;
+const randomDay = randomDate(new Date(2012, 0, 1), new Date());
 
 interface GameProps {
   settingsData: SettingsData;
@@ -38,7 +39,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
 
   const countryInputRef = useRef<HTMLInputElement>(null);
 
-  const [todays, addGuess, randomAngle, imageScale] = useTodays(dayString);
+  const [todays, addGuess, randomAngle, imageScale] = useTodays(randomDay);
   const { country, guesses } = todays;
 
   const [currentGuess, setCurrentGuess] = useState("");
