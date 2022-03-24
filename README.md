@@ -26,6 +26,14 @@ $ sudo apt install npm
 $ npm ci
 ```
 
+### Prettier
+
+Update after any changes to follow coding style recommendations:
+
+```
+$ npx prettier --write src/components/
+```
+
 ### Testing
 
 Start a local webserver (which will take a moment initially to build the tree):
