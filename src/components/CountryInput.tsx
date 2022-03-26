@@ -7,17 +7,20 @@ import {
   getCountryName,
   sanitizeCountryName,
 } from "../domain/countries";
+import { Guess } from "../domain/guess";
 
 interface CountryInputProps {
   inputRef: React.RefObject<HTMLInputElement>;
   currentGuess: string;
   setCurrentGuess: (guess: string) => void;
+  guesses: Guess[];
 }
 
 export function CountryInput({
   inputRef,
   currentGuess,
   setCurrentGuess,
+  guesses,
 }: CountryInputProps) {
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
@@ -34,6 +37,10 @@ export function CountryInput({
               sanitizeCountryName(countryName).includes(
                 sanitizeCountryName(value)
               )
+            )
+            .filter(
+              (countryName) =>
+                !guesses.find((guess) => guess.name === countryName)
             )
         )
       }

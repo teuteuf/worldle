@@ -75,6 +75,13 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         return;
       }
 
+      if (guesses.find((guess) => guess.name === currentGuess.toUpperCase())) {
+        toast.error(t("countryDuplication"));
+        return;
+      }
+
+      console.log(currentGuess.toUpperCase());
+
       const newGuess = {
         name: currentGuess,
         distance: geolib.getDistance(guessedCountry, country),
@@ -93,7 +100,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         toast.success(t("welldone"), { delay: 2000 });
       }
     },
-    [addGuess, country, currentGuess, i18n.resolvedLanguage, t]
+    [addGuess, country, currentGuess, i18n.resolvedLanguage, t, guesses]
   );
 
   useEffect(() => {
@@ -224,6 +231,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
                 inputRef={countryInputRef}
                 currentGuess={currentGuess}
                 setCurrentGuess={setCurrentGuess}
+                guesses={guesses}
               />
               <button
                 className="rounded font-bold p-1 flex items-center justify-center border-2 uppercase my-0.5 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"
