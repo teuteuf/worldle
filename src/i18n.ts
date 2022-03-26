@@ -174,6 +174,62 @@ const resources = {
       buyMeACoffee: "☕ bat eskaini iezaidazu !",
     },
   },
+  hu: {
+    translation: {
+      placeholder: "Ország, terület...",
+      guess: "Tippelés",
+      share: "Megosztás",
+      showOnGoogleMaps: "👀 Google Maps-en",
+      welldone: "Szép munka!",
+      unknownCountry: "Ismeretlen ország!",
+      countryDuplication: "Már tippelted ezt az országot!",
+      copy: "Eredmény kimásolva vágólapra",
+      showCountry: "🗺️ Mutasd a térképet!",
+      cancelRotation: "🌀 Elforgatás kikapcsolása",
+      settings: {
+        title: "Beállítások",
+        distanceUnit: "Távolság mértékegysége",
+        theme: "Téma",
+        difficultyModifiers: "Nehézségi beállítások",
+        startingNextDay: "A holnapi naptól!",
+        noImageMode: "Vaktérkép elrejtése.",
+        rotationMode: "Vaktérkép véletlenszerű elforgatása.",
+      },
+      stats: {
+        title: "Statisztikák",
+        played: "Játszott",
+        win: "Eltalált %",
+        currentStreak: "Jelenlegi Streak",
+        maxStreak: "Max Streak",
+        averageBestDistance: "Legközelebbi tippek átlaga",
+        guessDistribution: "Találatok eloszlása:",
+      },
+      install: {
+        title: "Worldle",
+        descritpionTitle: "App Letöltése:",
+        description:
+          "Add hozzá a Worldle a Kezdőképernyőhöz, hogy egyszerűbben játszhass!",
+        instructionTitle: "In",
+        instructionActionOk: "OK",
+        instructionActionCancel: "Mégse",
+        instructionActionInstall: "Telepítés",
+        instructionFirefoxAction1: "- nyisd meg a böngésző beállításokat ",
+        instructionFirefoxAction2: "- hozzáadás Kezdőképernyőhöz",
+        instructionFirefoxNewAction1: "- nyisd meg a böngésző beállításokat ",
+        instructionFirefoxNewAction2: '- válaszd a "Telepítés"-t',
+        instructionIdeviceAction1: "- nyisd meg a megosztás menüt ",
+        instructionIdeviceAction2:
+          '- válaszd a "Hozzáadás Főképernyőhöz" menüpontot',
+        instructionOperaAction1: "- nyisd meg a főmenüt ",
+        instructionOperaAction2: "- hozzáadás Főképernyőhöz",
+        instructionNotSupported: "Nem támogatott böngészőt használsz!",
+      },
+      support: {
+        UA: "Ukrán Vöröskereszt támogatása",
+      },
+      buyMeACoffee: "Vegyél nekem egy ☕-t!",
+    },
+  },
 };
 
 i18n
