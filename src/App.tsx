@@ -5,6 +5,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Infos } from "./components/panels/Infos";
 import { useTranslation } from "react-i18next";
 import { InfosFr } from "./components/panels/InfosFr";
+import { InfosHu } from "./components/panels/InfosHu";
 import { Settings } from "./components/panels/Settings";
 import { useSettings } from "./hooks/useSettings";
 import { Worldle } from "./components/Worldle";
@@ -40,6 +41,18 @@ function App() {
     }
   }, [settingsData.theme]);
 
+  let InfosComponent;
+  switch (i18n.resolvedLanguage) {
+    case "fr":
+      InfosComponent = InfosFr;
+      break;
+    case "hu":
+      InfosComponent = InfosHu;
+      break;
+    default:
+      InfosComponent = Infos;
+  }
+
   return (
     <>
       <ToastContainer
@@ -50,19 +63,11 @@ function App() {
         autoClose={2000}
         bodyClassName="font-bold text-center"
       />
-      {i18n.resolvedLanguage === "fr" ? (
-        <InfosFr
-          isOpen={infoOpen}
-          close={() => setInfoOpen(false)}
-          settingsData={settingsData}
-        />
-      ) : (
-        <Infos
-          isOpen={infoOpen}
-          close={() => setInfoOpen(false)}
-          settingsData={settingsData}
-        />
-      )}
+      <InfosComponent
+        isOpen={infoOpen}
+        close={() => setInfoOpen(false)}
+        settingsData={settingsData}
+      />
       <Settings
         isOpen={settingsOpen}
         close={() => setSettingsOpen(false)}
