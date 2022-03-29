@@ -11,6 +11,7 @@ const resources = {
       showOnGoogleMaps: "👀 on Google Maps",
       welldone: "Well done!",
       unknownCountry: "Unknown country!",
+      countryDuplication: "Country already guessed!",
       copy: "Copied results to clipboard",
       showCountry: "🗺️ Show map!",
       cancelRotation: "🌀 Cancel rotation",
@@ -243,4 +244,7 @@ i18n
     fallbackLng: "en",
   });
 
+const languages = Object.keys(resources);
+
+export { languages };
 export default i18n;
