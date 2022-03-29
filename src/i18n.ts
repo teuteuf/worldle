@@ -187,4 +187,7 @@ i18n
     fallbackLng: "en",
   });
 
+const languages = Object.keys(resources);
+
+export { languages };
 export default i18n;
