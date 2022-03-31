@@ -58,7 +58,7 @@ const resources = {
   },
   fr: {
     translation: {
-      placeholder: "Pays, territoires...",
+      placeholder: "Pays, territoires…",
       guess: "Deviner",
       share: "Partager",
       showOnGoogleMaps: "👀 sur Google Maps",
@@ -72,7 +72,7 @@ const resources = {
         distanceUnit: "Unité de distance",
         theme: "Thème",
         difficultyModifiers: "Modificateurs de difficulté",
-        startingNextDay: "A partir du lendemain !",
+        startingNextDay: "À partir du lendemain !",
         noImageMode: "Cache l'image du pays pour plus de challenge.",
         rotationMode: "Tourne l'image du pays de manière aléatoire.",
       },
@@ -80,14 +80,14 @@ const resources = {
         title: "Statistiques",
         played: "Parties",
         win: "Victoires %",
-        currentStreak: "Série Actuelle",
-        maxStreak: "Série Max",
-        averageBestDistance: "Moyenne Meilleures Distances",
-        guessDistribution: "Répartitions des victoires:",
+        currentStreak: "Série actuelle",
+        maxStreak: "Combo max",
+        averageBestDistance: "Moyenne des meilleures distances",
+        guessDistribution: "Répartition des éssais :",
       },
       install: {
         title: "Worldle",
-        descritpionTitle: "Installer l'app:",
+        descritpionTitle: "Installer l'appli :",
         description:
           "Ajouter Worldle sur l'écran d'accueil pour le retrouver plus facilement !",
         instructionTitle: "Instructions :",
@@ -107,7 +107,7 @@ const resources = {
       support: {
         UA: "Soutenez la Croix Rouge Ukrainienne",
       },
-      buyMeACoffee: "Offrez moi un ☕ !",
+      buyMeACoffee: "Offrez-moi un ☕ !",
     },
   },
   es: {
