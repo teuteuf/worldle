@@ -204,15 +204,15 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             />
             <a
               className="underline w-full text-center block mt-4"
-              href={`https://www.google.com/maps?q=${getCountryName(
+              href={`https://nominatim.openstreetmap.org/ui/search.html?country=${getCountryName(
                 i18n.resolvedLanguage,
                 country
-              )}+${country.code.toUpperCase()}&hl=${i18n.resolvedLanguage}`}
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               <Twemoji
-                text={t("showOnGoogleMaps")}
+                text={t("showOnOpenStreetMap")}
                 options={{ className: "inline-block" }}
               />
             </a>
