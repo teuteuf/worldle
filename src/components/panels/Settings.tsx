@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { SettingsData } from "../../hooks/useSettings";
+import { SettingsStorageData } from "../../hooks/useSettings";
 import { Panel } from "./Panel";
 
 interface SettingsProps {
   isOpen: boolean;
   close: () => void;
-  settingsData: SettingsData;
-  updateSettings: (newSettings: Partial<SettingsData>) => void;
+  settingsData: SettingsStorageData;
+  updateSettings: (newSettings: Partial<SettingsStorageData>) => void;
 }
 
 export function Settings({
@@ -50,11 +50,17 @@ export function Settings({
           <select
             id="setting-theme"
             className="h-8 dark:bg-slate-800"
-            value={settingsData.theme}
+            value={settingsData.themePreference}
             onChange={(e) =>
-              updateSettings({ theme: e.target.value as "light" | "dark" })
+              updateSettings({
+                themePreference: e.target.value as
+                  | "light"
+                  | "dark"
+                  | "no-preference",
+              })
             }
           >
+            <option value="no-preference">System</option>
             <option value="light">Light</option>
             <option value="dark">Dark</option>
           </select>

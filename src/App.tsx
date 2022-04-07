@@ -38,7 +38,8 @@ function App({
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [statsOpen, setStatsOpen] = useState(false);
 
-  const [settingsData, updateSettings] = useSettings();
+  const [settingsData, settingsStorageData, updateSettingsStorageData] =
+    useSettings();
 
   useEffect(() => {
     if (newServiceWorkerDetected) {
@@ -86,8 +87,8 @@ function App({
       <Settings
         isOpen={settingsOpen}
         close={() => setSettingsOpen(false)}
-        settingsData={settingsData}
-        updateSettings={updateSettings}
+        settingsData={settingsStorageData}
+        updateSettings={updateSettingsStorageData}
       />
       <Stats
         isOpen={statsOpen}
@@ -125,7 +126,10 @@ function App({
               <Twemoji text="⚙️" />
             </button>
           </header>
-          <Game settingsData={settingsData} updateSettings={updateSettings} />
+          <Game
+            settingsData={settingsData}
+            updateSettings={updateSettingsStorageData}
+          />
           <footer className="flex justify-center items-center text-sm mt-8 mb-1">
             <Twemoji
               text="❤️"
