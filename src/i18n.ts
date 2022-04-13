@@ -153,6 +153,7 @@ const resources = {
       guess: "Asmatu",
       share: "Elkarbanatu",
       showOnGoogleMaps: "👀 Google Maps-en",
+      showOnWikipedia: "📚 Megtekintés Wikipédián",
       welldone: "Ongi egina !",
       unknownCountry: "Estatu ezezaguna !",
       copy: "Emaitzak arbelean kopiatuta !",
