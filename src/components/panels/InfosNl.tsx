@@ -21,8 +21,8 @@ export function InfosNl({ isOpen, close, settingsData }: InfosProps) {
         </div>
         <div>Iedere gok moet een geldig land, gebied, enzovoort zijn.</div>
         <div>
-          Na iedere gok krijg je de afstand, richting en nabijheid van jouw
-          gok naar het doelgebied.
+          Na iedere gok zie je de afstand, richting en nabijheid van jouw gok
+          naar het doelgebied.
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
@@ -41,9 +41,9 @@ export function InfosNl({ isOpen, close, settingsData }: InfosProps) {
           />
           <div className="my-2">
             Jouw gok <span className="uppercase font-bold">Chili</span> is op{" "}
-            {formatDistance(13557000, settingsData.distanceUnit)} afstand van het
-            doelgebied, het doelgebied is in noordoostelijke richting, en je hebt
-            slechts een 32% nabijheid omdat het behoorlijk ver weg is!
+            {formatDistance(13557000, settingsData.distanceUnit)} afstand van
+            het doelgebied, het doelgebied is in noordoostelijke richting, en je
+            hebt slechts een 32% nabijheid omdat het behoorlijk ver weg is!
           </div>
         </div>
         <div>
@@ -59,10 +59,9 @@ export function InfosNl({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            Jouw tweede gok{" "}
-            <span className="uppercase font-bold">Finland</span> is
-            dichterbij! {formatDistance(3206000, settingsData.distanceUnit)} ver,
-            zuidoosterlijke richting en 84%!
+            Jouw tweede gok <span className="uppercase font-bold">Finland</span>{" "}
+            is dichterbij! {formatDistance(3206000, settingsData.distanceUnit)}{" "}
+            ver, zuidoosterlijke richting en 84%!
           </div>
         </div>
         <div>
@@ -78,8 +77,9 @@ export function InfosNl({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            De volgende gok, <span className="uppercase font-bold">Libanon</span>,
-            is het bedoelde land! Gefeliciteerd!{" "}
+            De volgende gok,{" "}
+            <span className="uppercase font-bold">Libanon</span>, is het
+            bedoelde land! Gefeliciteerd!{" "}
             <Twemoji text="🎉" options={{ className: "inline-block" }} />
           </div>
         </div>
@@ -112,8 +112,8 @@ export function InfosNl({ isOpen, close, settingsData }: InfosProps) {
           rel="noopener noreferrer"
         >
           Wordle
-        </a>,{" "}
-        gemaakt door{" "}
+        </a>
+        , gemaakt door{" "}
         <a
           className="underline"
           href="https://twitter.com/powerlanguish"

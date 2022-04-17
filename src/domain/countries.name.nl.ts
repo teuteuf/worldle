@@ -1,5 +1,5 @@
 // Source: https://fr.wikipedia.org/wiki/ISO_3166
-export const frenchCountryNames: Record<string, string> = {
+export const dutchCountryNames: Record<string, string> = {
   AF: "Afghanistan",
   AX: "Åland",
   AL: "Albanië",
