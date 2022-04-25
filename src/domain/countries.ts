@@ -6,6 +6,7 @@
 import { areas } from "./countries.area";
 import { countries } from "./countries.position";
 import { frenchCountryNames } from "./countries.name.fr";
+import { hungarianCountryNames } from "./countries.name.hu";
 import { countryCodesWithImage } from "./countries.image";
 
 export interface Country {
@@ -25,10 +26,14 @@ export const bigEnoughCountriesWithImage = countriesWithImage.filter(
 );
 
 export function getCountryName(language: string, country: Country) {
-  if (language === "fr") {
-    return frenchCountryNames[country.code];
+  switch (language) {
+    case "fr":
+      return frenchCountryNames[country.code];
+    case "hu":
+      return hungarianCountryNames[country.code];
+    default:
+      return country.name;
   }
-  return country.name;
 }
 
 export function sanitizeCountryName(countryName: string): string {
