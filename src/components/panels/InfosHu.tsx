@@ -36,7 +36,7 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Chili",
+                name: "Chile",
                 direction: "NE",
                 distance: 13_557_000,
               },
@@ -44,7 +44,7 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
             settingsData={settingsData}
           />
           <div className="my-2">
-            A tipped, <span className="uppercase font-bold">Chili</span>
+            A tipped, <span className="uppercase font-bold">Chile</span>{" "}
             {formatDistance(13_557_000, settingsData.distanceUnit)}-re van a
             céltól, mely a tippedtől Észak-Keletre-fekszik, de csak 32%-os a
             tipp, mivel elég messzire tippeltél.
@@ -55,7 +55,7 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Finlande",
+                name: "Finnország",
                 direction: "SE",
                 distance: 3_206_000,
               },
@@ -75,7 +75,7 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
             rowCount={1}
             guesses={[
               {
-                name: "Liban",
+                name: "Libanon",
                 direction: "N",
                 distance: 0,
               },
