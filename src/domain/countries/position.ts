@@ -1,4 +1,4 @@
-import { Country } from "./countries";
+import { Country } from "./shape";
 
 export const countries: Country[] = [
   {

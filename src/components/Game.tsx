@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 import { toast } from "react-toastify";
-import { getCountryName, sanitizeCountryName } from "../domain/countries";
+import { getCountryName, sanitizeCountryName } from "../domain/countries/shape";
 import { CountryInput } from "./CountryInput";
 import * as geolib from "geolib";
 import { Share } from "./Share";
@@ -17,7 +17,7 @@ import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
 import { getDayString, useTodays } from "../hooks/useTodays";
 import { Twemoji } from "@teuteuf/react-emoji-render";
-import { countries } from "../domain/countries.position";
+import { countries } from "../domain/countries/position";
 import { useNewsNotifications } from "../hooks/useNewsNotifications";
 
 const MAX_TRY_COUNT = 6;

@@ -3,12 +3,12 @@
 // Countries images => https://github.com/djaiss/mapsicon
 // Country area => https://github.com/samayo/country-json/blob/master/src/country-by-surface-area.json
 
-import { areas } from "./countries.area";
-import { countries } from "./countries.position";
-import { frenchCountryNames } from "./countries.name.fr";
-import { hungarianCountryNames } from "./countries.name.hu";
-import { dutchCountryNames } from "./countries.name.nl";
-import { countryCodesWithImage } from "./countries.image";
+import { areas } from "./area";
+import { countries } from "./position";
+import { frenchCountryNames } from "./name.fr";
+import { hungarianCountryNames } from "./name.hu";
+import { dutchCountryNames } from "./name.nl";
+import { countryCodesWithImage } from "./image";
 
 export interface Country {
   code: string;
