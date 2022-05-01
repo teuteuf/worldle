@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export interface SettingsData {
   noImageMode: boolean;
@@ -10,19 +10,21 @@ export interface SettingsData {
   updateNotificationDisabled: boolean;
 }
 
-const defaultSettingsData: SettingsData = {
+export type SettingsStorageData = Omit<SettingsData, "theme"> & {
+  themePreference: "light" | "dark" | "no-preference";
+};
+
+const defaultSettingsData: SettingsStorageData = {
   noImageMode: false,
   rotationMode: false,
   distanceUnit: "km",
-  theme: window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light",
+  themePreference: "no-preference",
   shiftDayCount: 0,
   allowShiftingDay: false,
   updateNotificationDisabled: false,
 };
 
-function loadSettings(): SettingsData {
+function loadSettings(): SettingsStorageData {
   const storedSettings = localStorage.getItem("settings");
   const settingsData = storedSettings != null ? JSON.parse(storedSettings) : {};
   return {
@@ -30,27 +32,37 @@ function loadSettings(): SettingsData {
     ...settingsData,
   };
 }
-
 export function useSettings(): [
   SettingsData,
-  (newSettings: Partial<SettingsData>) => void
+  SettingsStorageData,
+  (newSettings: Partial<SettingsStorageData>) => void
 ] {
-  const [settingsData, setSettingsData] = useState<SettingsData>(
-    loadSettings()
-  );
+  const [settingsStorageData, setSettingsStorageData] =
+    useState<SettingsStorageData>(loadSettings());
 
-  const updateSettingsData = useCallback(
-    (newSettings: Partial<SettingsData>) => {
+  const settingsData = useMemo(() => {
+    const { themePreference, ...settingsData } = settingsStorageData;
+    const theme =
+      themePreference === "no-preference"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
+        : themePreference;
+    return { ...settingsData, theme };
+  }, [settingsStorageData]);
+
+  const updateSettingsStorageData = useCallback(
+    (newSettings: Partial<SettingsStorageData>) => {
       const updatedSettings = {
-        ...settingsData,
+        ...settingsStorageData,
         ...newSettings,
       };
 
-      setSettingsData(updatedSettings);
+      setSettingsStorageData(updatedSettings);
       localStorage.setItem("settings", JSON.stringify(updatedSettings));
     },
-    [settingsData]
+    [settingsStorageData]
   );
 
-  return [settingsData, updateSettingsData];
+  return [settingsData, settingsStorageData, updateSettingsStorageData];
 }
