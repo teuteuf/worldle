@@ -19,7 +19,7 @@ export function InfosPl({ isOpen, close, settingsData }: InfosProps) {
         <div>
           Odgadnij <Worldle /> w 6. próbach.
         </div>
-        <div>Każda próba odgadnięcia musi być prawidłowym krajem, terytorium, ...</div>
+        <div>W każdej próbie odgadnięcia musisz podać istniejący kraj, terytorium, ...</div>
         <div>
         Po każdej próbie odgadnięcia otrzymasz informację o odległości, kierunku i bliskości między odgadniętym krajem a krajem docelowym.
         </div>
