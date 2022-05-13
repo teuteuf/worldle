@@ -33,14 +33,8 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
         <div className="font-bold">Példák</div>
         <div>
           <Guesses
-            rowCount={1}
-            guesses={[
-              {
-                name: "Chile",
-                direction: "NE",
-                distance: 13_557_000,
-              },
-            ]}
+            rowCount={0}
+            guesses={[]}
             settingsData={settingsData}
           />
           <div className="my-2">
@@ -52,14 +46,8 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
         </div>
         <div>
           <Guesses
-            rowCount={1}
-            guesses={[
-              {
-                name: "Finnország",
-                direction: "SE",
-                distance: 3_206_000,
-              },
-            ]}
+            rowCount={0}
+            guesses={[]}
             settingsData={settingsData}
           />
           <div className="my-2">
@@ -72,14 +60,8 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
         </div>
         <div>
           <Guesses
-            rowCount={1}
-            guesses={[
-              {
-                name: "Libanon",
-                direction: "N",
-                distance: 0,
-              },
-            ]}
+            rowCount={0}
+            guesses={[]}
             settingsData={settingsData}
           />
           <div className="my-2">

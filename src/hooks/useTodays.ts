@@ -11,15 +11,8 @@ import { areas } from "../domain/countries.area";
 import { Guess, loadAllGuesses, saveGuesses } from "../domain/guess";
 
 const forcedCountries: Record<string, string> = {
-  "2022-02-02": "TD",
-  "2022-02-03": "PY",
-  "2022-03-21": "HM",
-  "2022-03-22": "MC",
-  "2022-03-23": "PR",
-  "2022-03-24": "MX",
 };
 
-const noRepeatStartDate = DateTime.fromFormat("2022-05-01", "yyyy-MM-dd");
 
 export function getDayString(shiftDayCount?: number) {
   return DateTime.now()
@@ -79,13 +72,11 @@ export function useTodays(dayString: string): [
 function getCountry(dayString: string) {
   const currentDayDate = DateTime.fromFormat(dayString, "yyyy-MM-dd");
   let pickingDate = DateTime.fromFormat("2022-03-21", "yyyy-MM-dd");
-  let smallCountryCooldown = 0;
   let pickedCountry: Country | null = null;
 
   const lastPickDates: Record<string, DateTime> = {};
 
   do {
-    smallCountryCooldown--;
 
     const pickingDateString = pickingDate.toFormat("yyyy-MM-dd");
 
@@ -97,10 +88,7 @@ function getCountry(dayString: string) {
           )
         : undefined;
 
-    const countrySelection =
-      smallCountryCooldown < 0
-        ? countriesWithImage
-        : bigEnoughCountriesWithImage;
+    const countrySelection = countriesWithImage;
 
     if (forcedCountry != null) {
       pickedCountry = forcedCountry;
@@ -108,18 +96,7 @@ function getCountry(dayString: string) {
       let countryIndex = Math.floor(
         seedrandom.alea(pickingDateString)() * countrySelection.length
       );
-      pickedCountry = countrySelection[countryIndex];
-
-      if (currentDayDate >= noRepeatStartDate) {
-        while (isARepeat(pickedCountry, lastPickDates, currentDayDate)) {
-          countryIndex = (countryIndex + 1) % countrySelection.length;
-          pickedCountry = countrySelection[countryIndex];
-        }
-      }
-    }
-
-    if (areas[pickedCountry.code] < smallCountryLimit) {
-      smallCountryCooldown = 7;
+      pickedCountry = countrySelection[countryIndex];     
     }
 
     lastPickDates[pickedCountry.code] = pickingDate;
@@ -127,20 +104,4 @@ function getCountry(dayString: string) {
   } while (pickingDate <= currentDayDate);
 
   return pickedCountry;
-}
-
-function isARepeat(
-  pickedCountry: Country | null,
-  lastPickDates: Record<string, DateTime>,
-  currentDayDate: DateTime
-) {
-  if (pickedCountry == null || lastPickDates[pickedCountry.code] == null) {
-    return false;
-  }
-  const daysSinceLastPick = lastPickDates[pickedCountry.code].diff(
-    currentDayDate,
-    "day"
-  ).days;
-
-  return daysSinceLastPick < 100;
 }

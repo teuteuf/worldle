@@ -29,14 +29,8 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         <div className="font-bold">Examples</div>
         <div>
           <Guesses
-            rowCount={1}
-            guesses={[
-              {
-                name: "Chile",
-                direction: "NE",
-                distance: 13_557_000,
-              },
-            ]}
+            rowCount={0}
+            guesses={[]}
             settingsData={settingsData}
           />
           <div className="my-2">
@@ -49,14 +43,8 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         </div>
         <div>
           <Guesses
-            rowCount={1}
-            guesses={[
-              {
-                name: "Finland",
-                direction: "SE",
-                distance: 3_206_000,
-              },
-            ]}
+            rowCount={0}
+            guesses={[]}
             settingsData={settingsData}
           />
           <div className="my-2">
@@ -68,14 +56,8 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         </div>
         <div>
           <Guesses
-            rowCount={1}
-            guesses={[
-              {
-                name: "Lebanon",
-                direction: "N",
-                distance: 0,
-              },
-            ]}
+            rowCount={0}
+            guesses={[]}
             settingsData={settingsData}
           />
           <div className="my-2">
