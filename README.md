@@ -1,10 +1,10 @@
 # WOR**L**DLE
 
-Play this geographical wordle here: https://worldle.teuteuf.fr !
+Play this geographical wordle here: https://Sardle.teuteuf.fr !
 
 ## Contributions & PR
 
-Even if there are many more users than I could ever imagine on Worldle, it was originally a small pet project that I started in order to  practice code and have fun.
+Even if there are many more users than I could ever imagine on Sardle, it was originally a small pet project that I started in order to  practice code and have fun.
 
 So, I prefer to continue to manage it personally and do all the design and the code by myself.  :)
 

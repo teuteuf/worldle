@@ -1,7 +1,7 @@
 import { Guesses } from "../Guesses";
 import { Panel } from "./Panel";
 import React from "react";
-import { Worldle } from "../Worldle";
+import { Sardle } from "../Sardle";
 import { formatDistance } from "../../domain/geography";
 import { SettingsData } from "../../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
@@ -18,7 +18,7 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
           {" "}
-          Találd ki a napi <Worldle />
+          Találd ki a napi <Sardle />
           -t 6 próbálkozásból.
         </div>
         <div>
@@ -91,23 +91,23 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3 font-bold">
-        Minden nap új <Worldle /> érhető el!
+        Minden nap új <Sardle /> érhető el!
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div className="font-bold">Kérdésed, vagy javaslatod van?</div>
         <div>
           <a
             className="underline"
-            href="https://worldle.notion.site/Worldle-4005ca16fc9341e7be8adcfd30628146"
+            href="https://Sardle.notion.site/Sardle-4005ca16fc9341e7be8adcfd30628146"
             target="_blank"
             rel="noopener noreferrer"
           >
-            FAQ Worldle
+            FAQ Sardle
           </a>
         </div>
       </div>
       <div className="space-y-3 border-b-2 border-gray-200 pb-3 mb-3">
-        <Worldle />
+        <Sardle />
         -höz <span className="font-bold">jelentős</span> inspirációt adott a{" "}
         <a
           className="underline"
@@ -142,7 +142,7 @@ export function InfosHu({ isOpen, close, settingsData }: InfosProps) {
           - (
           <a
             className="underline"
-            href="https://github.com/teuteuf/worldle/"
+            href="https://github.com/teuteuf/Sardle/"
             target="_blank"
             rel="noopener noreferrer"
           >

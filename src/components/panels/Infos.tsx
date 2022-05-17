@@ -1,7 +1,7 @@
 import { Guesses } from "../Guesses";
 import { Panel } from "./Panel";
 import React from "react";
-import { Worldle } from "../Worldle";
+import { Sardle } from "../Sardle";
 import { formatDistance } from "../../domain/geography";
 import { SettingsData } from "../../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
@@ -17,7 +17,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
     <Panel title="How to play" isOpen={isOpen} close={close}>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
-          Guess the <Worldle /> in 6 guesses.
+          Guess the <Sardle /> in 6 guesses.
         </div>
         <div>Each guess must be a valid country, territory, ...</div>
         <div>
@@ -86,7 +86,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3 font-bold">
-        A new <Worldle /> will be available every day!
+        A new <Sardle /> will be available every day!
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div className="font-bold">Any question or suggestion?</div>
@@ -94,17 +94,17 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
           Check the{" "}
           <a
             className="underline"
-            href="https://worldle.notion.site/Worldle-b84ab0f002e34866980a4d47cf9291b7"
+            href="https://Sardle.notion.site/Sardle-b84ab0f002e34866980a4d47cf9291b7"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Worldle FAQ
+            Sardle FAQ
           </a>
           !
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <Worldle /> has been <span className="font-bold">heavily</span> inspired
+        <Sardle /> has been <span className="font-bold">heavily</span> inspired
         by{" "}
         <a
           className="underline"
@@ -139,7 +139,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
           - (
           <a
             className="underline"
-            href="https://github.com/teuteuf/worldle/"
+            href="https://github.com/teuteuf/Sardle/"
             target="_blank"
             rel="noopener noreferrer"
           >

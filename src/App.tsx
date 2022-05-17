@@ -9,10 +9,12 @@ import { InfosHu } from "./components/panels/InfosHu";
 import { InfosNl } from "./components/panels/InfosNl";
 import { Settings } from "./components/panels/Settings";
 import { useSettings } from "./hooks/useSettings";
-import { Worldle } from "./components/Worldle";
+import { Sardle } from "./components/Sardle";
 import { Stats } from "./components/panels/Stats";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import { getDayString, useTodays } from "./hooks/useTodays";
+
+import sparkgeoLogo from "./sparkgeo.png"; // with import
 
 const supportLink: Record<string, string> = {
   UA: "https://donate.redcrossredcrescent.org/ua/donate/~my-donation?_cv=1",
@@ -91,9 +93,17 @@ export default function App() {
             >
               <Twemoji text="❓" />
             </button>
-            <h1 className="text-4xl font-bold uppercase tracking-wide text-center my-1 flex-auto">
-              Wor<span className="text-green-600">l</span>dle
-            </h1>
+            <div className="flex flex-col justify-center items-center grow">
+              <img
+                alt="Sparkgeo logo"
+                src={sparkgeoLogo}
+                style={{ height: "25%" }}
+              ></img>
+              <h1 className="text-4xl font-bold tracking-wide text-center my-1">
+                sar<span className="text-green-600">dle</span>
+              </h1>
+            </div>
+
             <button
               className="ml-3 text-xl"
               type="button"
@@ -115,7 +125,7 @@ export default function App() {
               text="❤️"
               className="flex items-center justify-center mr-1"
             />{" "}
-            <Worldle />? -
+            <Sardle />? -
             {country && supportLink[country.code] != null ? (
               <a
                 className="underline pl-1"

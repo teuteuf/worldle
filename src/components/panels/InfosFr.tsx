@@ -1,7 +1,7 @@
 import { Guesses } from "../Guesses";
 import { Panel } from "./Panel";
 import React from "react";
-import { Worldle } from "../Worldle";
+import { Sardle } from "../Sardle";
 import { formatDistance } from "../../domain/geography";
 import { SettingsData } from "../../hooks/useSettings";
 import { Twemoji } from "@teuteuf/react-emoji-render";
@@ -18,7 +18,7 @@ export function InfosFr({ isOpen, close, settingsData }: InfosProps) {
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div>
           {" "}
-          Devine le <Worldle /> en 6 essais.
+          Devine le <Sardle /> en 6 essais.
         </div>
         <div>Chaque essai doit être un pays, un territoire, etc... valide.</div>
         <div>
@@ -88,7 +88,7 @@ export function InfosFr({ isOpen, close, settingsData }: InfosProps) {
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3 font-bold">
-        Un nouveau <Worldle /> sera disponible chaque jour !
+        Un nouveau <Sardle /> sera disponible chaque jour !
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <div className="font-bold">Une question ou suggestion ?</div>
@@ -96,17 +96,17 @@ export function InfosFr({ isOpen, close, settingsData }: InfosProps) {
           Rendez-vous sur la{" "}
           <a
             className="underline"
-            href="https://worldle.notion.site/Worldle-4005ca16fc9341e7be8adcfd30628146"
+            href="https://Sardle.notion.site/Sardle-4005ca16fc9341e7be8adcfd30628146"
             target="_blank"
             rel="noopener noreferrer"
           >
-            FAQ Worldle
+            FAQ Sardle
           </a>{" "}
           !
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <Worldle /> a été <span className="font-bold">très</span> inspiré par{" "}
+        <Sardle /> a été <span className="font-bold">très</span> inspiré par{" "}
         <a
           className="underline"
           href="https://www.powerlanguage.co.uk/wordle/"
@@ -140,7 +140,7 @@ export function InfosFr({ isOpen, close, settingsData }: InfosProps) {
           - (
           <a
             className="underline"
-            href="https://github.com/teuteuf/worldle/"
+            href="https://github.com/teuteuf/Sardle/"
             target="_blank"
             rel="noopener noreferrer"
           >

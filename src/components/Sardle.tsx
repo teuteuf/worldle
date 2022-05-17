@@ -1,9 +1,9 @@
 import React from "react";
 
-export function Worldle() {
+export function Sardle() {
   return (
     <span className="font-bold">
-      WOR<span className="text-green-600">L</span>DLE
+      SAR<span className="text-green-600">DLE</span>
     </span>
   );
 }
