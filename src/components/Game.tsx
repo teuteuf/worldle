@@ -12,6 +12,7 @@ import { CountryInput } from "./CountryInput";
 import * as geolib from "geolib";
 import { Share } from "./Share";
 import { Guesses } from "./Guesses";
+import { Hints } from "./Hints";
 import { useTranslation } from "react-i18next";
 import { SettingsData } from "../hooks/useSettings";
 import { useMode } from "../hooks/useMode";
@@ -178,6 +179,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           </button>
         )}
       </div>
+      {!gameEnded && <Hints guesses={guesses} />}
       {rotationMode && !hideImageMode && !gameEnded && (
         <button
           className="font-bold rounded p-1 border-2 uppercase mb-2 hover:bg-gray-50 active:bg-gray-100 dark:hover:bg-slate-800 dark:active:bg-slate-700"
