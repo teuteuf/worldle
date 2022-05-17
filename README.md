@@ -14,6 +14,42 @@ If you'd like to make a suggestion, don't hesitate to open an issue!
 
 Otherwise, feel free to fork the project, customize it and play with it on your side! <3
 
+## Quick start
+
+### Prerequisites
+
+Install `npm` with your distro's package manager, and then install everything from
+`packages.json.lock` using `npm`:
+
+```
+$ sudo apt install npm
+$ npm ci
+```
+
+### Prettier
+
+Update after any changes to follow coding style recommendations:
+
+```
+$ npx prettier --write src/components/
+```
+
+### Testing
+
+Start a local webserver (which will take a moment initially to build the tree):
+
+```
+$ npm start
+```
+
+### Publication
+
+Build the tree into the `build` subdirectory, which can be copied to your site:
+
+```
+$ npm run build
+```
+
 ## Resources used:
 
 - Countries with long/lat => https://developers.google.com/public-data/docs/canonical/countries_csv
