@@ -341,7 +341,8 @@ export const translations = {
       install: {
         title: "Worldle",
         descritpionTitle: "Instalar App:",
-        description: "Adicione Worldle a sua página inicial para jogar mais facilmente!",
+        description:
+          "Adicione Worldle a sua página inicial para jogar mais facilmente!",
         instructionTitle: "Instruções:",
         instructionActionOk: "OK",
         instructionActionCancel: "Cancelar",
