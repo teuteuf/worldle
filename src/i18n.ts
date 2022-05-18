@@ -322,7 +322,7 @@ export const translations = {
         title: "Configurações",
         distanceUnit: "Unidade de distância",
         theme: "Tema",
-        language: "Linguagem",
+        language: "Idioma",
         difficultyModifiers: "Modificadores de dificuldade",
         startingNextDay: "A partir de amanhã!",
         noImageMode: "Esconder imagem do país para maior dificuldade.",
