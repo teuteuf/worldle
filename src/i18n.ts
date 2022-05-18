@@ -309,7 +309,7 @@ export const translations = {
   br: {
     translation: {
       placeholder: "País, território...",
-      guess: "Adivinhe",
+      guess: "Adivinhar",
       share: "Compartilhar",
       showOnGoogleMaps: "👀 no Google Maps",
       showOnWikipedia: "📚 no Wikipedia",
