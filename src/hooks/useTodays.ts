@@ -79,9 +79,12 @@ export function useTodays(dayString: string): [
 
 function getCountry(dayString: string) {
   if (TWITCH_PLAYS_WORLDLE) {
-    return bigEnoughCountriesWithImage[
-      Math.floor(bigEnoughCountriesWithImage.length * Math.random())
-    ];
+    return (
+      bigEnoughCountriesWithImage.find((c) => c.code === "CA") ??
+      bigEnoughCountriesWithImage[
+        Math.floor(bigEnoughCountriesWithImage.length * Math.random())
+      ]
+    );
   }
 
   const currentDayDate = DateTime.fromFormat(dayString, "yyyy-MM-dd");
