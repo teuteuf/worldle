@@ -224,7 +224,7 @@ export const frenchCountryNames: Record<string, string> = {
   TL: "Timor-Leste",
   TG: "Togo",
   TK: "Tokelau",
-  TO: "Tonga",
+  TO: "Tonga (Tongatapu et 'Eua)",
   TT: "Trinité-et-Tobago",
   TN: "Tunisie",
   TR: "Turquie",

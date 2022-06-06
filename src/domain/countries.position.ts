@@ -1319,7 +1319,7 @@ export const countries: Country[] = [
     code: "TO",
     latitude: -21.178986,
     longitude: -175.198242,
-    name: "Tonga",
+    name: "Tonga (Tongatapu and 'Eua)",
   },
   {
     code: "TR",

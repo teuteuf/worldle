@@ -137,8 +137,8 @@ function isARepeat(
   if (pickedCountry == null || lastPickDates[pickedCountry.code] == null) {
     return false;
   }
-  const daysSinceLastPick = lastPickDates[pickedCountry.code].diff(
-    currentDayDate,
+  const daysSinceLastPick = currentDayDate.diff(
+    lastPickDates[pickedCountry.code],
     "day"
   ).days;
 
