@@ -372,7 +372,7 @@ export const translations = {
       },
     },
   },
-  br: {
+  pt: {
     translation: {
       placeholder: "País, território...",
       guess: "Adivinhar",
