@@ -394,6 +394,7 @@ export const translations = {
         noImageMode: "Esconder imagem do país para maior dificuldade.",
         rotationMode: "Rotacionar imagem do país randomicamente.",
         updateNotificationDisabled: "Desativar notificações.",
+        showScale: "Substitua percentual de proximidade por percentual de tamanho.",
       },
       stats: {
         title: "Estatísticas",
