@@ -10,6 +10,7 @@ import { hungarianCountryNames } from "./countries.name.hu";
 import { dutchCountryNames } from "./countries.name.nl";
 import { polishCountryNames } from "./countries.name.pl";
 import { countryCodesWithImage } from "./countries.image";
+import { japaneseCountryNames } from "./countries.name.ja";
 
 export interface Country {
   code: string;
@@ -37,6 +38,8 @@ export function getCountryName(language: string, country: Country) {
       return dutchCountryNames[country.code];
     case "pl":
       return polishCountryNames[country.code];
+    case "ja":
+      return japaneseCountryNames[country.code];
     default:
       return country.name;
   }

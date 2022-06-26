@@ -14,6 +14,7 @@ import { Worldle } from "./components/Worldle";
 import { Stats } from "./components/panels/Stats";
 import { Twemoji } from "@teuteuf/react-emoji-render";
 import { getDayString, useTodays } from "./hooks/useTodays";
+import { InfosJa } from "./components/panels/InfosJa";
 
 const supportLink: Record<string, string> = {
   UA: "https://donate.redcrossredcrescent.org/ua/donate/~my-donation?_cv=1",
@@ -52,6 +53,9 @@ export default function App() {
       break;
     case "pl":
       InfosComponent = InfosPl;
+      break;
+    case "ja":
+      InfosComponent = InfosJa;
       break;
     default:
       InfosComponent = Infos;
