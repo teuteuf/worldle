@@ -9,6 +9,7 @@ import { frenchCountryNames } from "./countries.name.fr";
 import { hungarianCountryNames } from "./countries.name.hu";
 import { dutchCountryNames } from "./countries.name.nl";
 import { polishCountryNames } from "./countries.name.pl";
+import { germanCountryNames } from "./countries.name.de";
 import { countryCodesWithImage } from "./countries.image";
 
 export interface Country {
@@ -37,6 +38,8 @@ export function getCountryName(language: string, country: Country) {
       return dutchCountryNames[country.code];
     case "pl":
       return polishCountryNames[country.code];
+    case "de":
+      return germanCountryNames[country.code];
     default:
       return country.name;
   }

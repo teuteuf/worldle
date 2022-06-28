@@ -8,6 +8,7 @@ import { InfosFr } from "./components/panels/InfosFr";
 import { InfosHu } from "./components/panels/InfosHu";
 import { InfosNl } from "./components/panels/InfosNl";
 import { InfosPl } from "./components/panels/InfosPl";
+import { InfosDe } from "./components/panels/InfosDe";
 import { Settings } from "./components/panels/Settings";
 import { useSettings } from "./hooks/useSettings";
 import { Worldle } from "./components/Worldle";
@@ -52,6 +53,9 @@ export default function App() {
       break;
     case "pl":
       InfosComponent = InfosPl;
+      break;
+    case "de":
+      InfosComponent = InfosDe;
       break;
     default:
       InfosComponent = Infos;
