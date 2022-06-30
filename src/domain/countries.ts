@@ -5,6 +5,7 @@
 
 import { areas } from "./countries.area";
 import { countries } from "./countries.position";
+import { corsicanCountryNames } from "./countries.name.co";
 import { frenchCountryNames } from "./countries.name.fr";
 import { hungarianCountryNames } from "./countries.name.hu";
 import { dutchCountryNames } from "./countries.name.nl";
@@ -29,6 +30,8 @@ export const bigEnoughCountriesWithImage = countriesWithImage.filter(
 
 export function getCountryName(language: string, country: Country) {
   switch (language) {
+    case "co":
+      return corsicanCountryNames[country.code];
     case "fr":
       return frenchCountryNames[country.code];
     case "hu":

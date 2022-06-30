@@ -4,6 +4,7 @@ import { Game } from "./components/Game";
 import React, { useEffect, useMemo, useState } from "react";
 import { Infos } from "./components/panels/Infos";
 import { useTranslation } from "react-i18next";
+import { InfosCo } from "./components/panels/InfosCo";
 import { InfosFr } from "./components/panels/InfosFr";
 import { InfosHu } from "./components/panels/InfosHu";
 import { InfosNl } from "./components/panels/InfosNl";
@@ -41,6 +42,9 @@ export default function App() {
 
   let InfosComponent;
   switch (i18n.resolvedLanguage) {
+    case "co":
+      InfosComponent = InfosCo;
+      break;
     case "fr":
       InfosComponent = InfosFr;
       break;
