@@ -109,7 +109,7 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <Worldle /> hè statu inspiratu{" "}
-        <span className="font-bold">forte forte</span>
+        <span className="font-bold">forte forte</span>{" "}
         da{" "}
         <a
           className="underline"
