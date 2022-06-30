@@ -45,7 +45,7 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
             {formatDistance(13557000, settingsData.distanceUnit)} di u paese
             à induvinà, quellu paese si trova in direzzione di u nordeste
             è site solu à 32% di vicinanza perchè u vostru colpu hè quantunque
-            alluntanatu !
+            alluntanatu !
           </div>
         </div>
         <div>
@@ -62,9 +62,9 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
           />
           <div className="my-2">
             U vostru secondu colpu{" "}
-            <span className="uppercase font-bold">Finlandia</span> hè più vicinu !
+            <span className="uppercase font-bold">Finlandia</span> hè più vicinu !
             A risposta si trova à{" "}{formatDistance(3206000, settingsData.distanceUnit)},
-            ver di u sudeste cù una vicinanza di 84% !
+            ver di u sudeste cù una vicinanza di 84% !
           </div>
         </div>
         <div>
@@ -81,16 +81,16 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
           />
           <div className="my-2">
             L’ultimu colpu, <span className="uppercase font-bold">Libanu</span>,
-            hè u paese à induvinà ! Bellu colpu !{" "}
+            hè u paese à induvinà ! Bellu colpu !{" "}
             <Twemoji text="🎉" options={{ className: "inline-block" }} />
           </div>
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3 font-bold">
-        Un novu <Worldle /> hè dispunibule ogni ghjornu !
+        Un novu <Worldle /> hè dispunibule ogni ghjornu !
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-        <div className="font-bold">Una dumanda o una sugestione ?</div>
+        <div className="font-bold">Una dumanda o una sugestione ?</div>
         <div>
           Visitate a{" "}
           <a
@@ -99,8 +99,8 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            FAQ di Worldle 
-          </a>{" "}
+            FAQ di Worldle
+          </a>{" "}
           !
         </div>
       </div>
@@ -149,7 +149,7 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
           )
         </div>
         <div>
-          Vulete sustenemi ?{" "}
+          Vulete sustenemi ?{" "}
           <a
             className="underline"
             href="https://www.ko-fi.com/teuteuf"
@@ -157,7 +157,7 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
             rel="noopener noreferrer"
           >
             <Twemoji
-              text="Rigalatemi d’un caffè ! ☕"
+              text="Rigalatemi d’un caffè ! ☕"
               options={{ className: "inline-block" }}
             />
           </a>
