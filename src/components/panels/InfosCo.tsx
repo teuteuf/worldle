@@ -21,8 +21,8 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
           Induvinate u <Worldle /> in 6 colpi.
         </div>
         <div>
-		  Ogni colpu deve esse u nome accettevule d’un paese o d’un territoriu.
-		</div>
+          Ogni colpu deve esse u nome accettevule d’un paese o d’un territoriu.
+        </div>
         <div>
           Dopu à ogni colpu, ottinerete a distanza, a direzzione è a vicinanza
           trà a vostra prova è u paese à induvinà.
@@ -44,7 +44,7 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
           />
           <div className="my-2">
             U vostru colpu <span className="uppercase font-bold">Cile</span> hè
-            à{" "}{formatDistance(13557000, settingsData.distanceUnit)} di u paese à
+            à {formatDistance(13557000, settingsData.distanceUnit)} di u paese à
             induvinà, quellu paese si trova in direzzione di u nordeste è site
             solu à 32% di vicinanza perchè u vostru colpu hè quantunque
             alluntanatu !
@@ -65,7 +65,8 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
           <div className="my-2">
             U vostru secondu colpu{" "}
             <span className="uppercase font-bold">Finlandia</span> hè più vicinu
-            ! A risposta si trova à{" "}{formatDistance(3206000, settingsData.distanceUnit)}, ver di u
+            ! A risposta si trova à{" "}
+            {formatDistance(3206000, settingsData.distanceUnit)}, ver di u
             sudeste cù una vicinanza di 84% !
           </div>
         </div>
@@ -108,7 +109,7 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
         <Worldle /> hè statu inspiratu{" "}
-		<span className="font-bold">forte forte</span>
+        <span className="font-bold">forte forte</span>
         da{" "}
         <a
           className="underline"
