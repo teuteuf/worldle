@@ -24,10 +24,10 @@ export const translations = {
         startingNextDay: "Principiu à u lindumane !",
         noImageMode: "Piatta a fiura di u paese per più di cumpetizione.",
         rotationMode: "Face girà à l’azardu a fiura di u paese.",
-        updateNotificationDisabled: 
-         "Disattiveghja e mudificazioni di messa à livellu.",
-        showScale: 
-         "Rimpiazzeghja u percentuale di vicinanza da quellu di dimensione.",
+        updateNotificationDisabled:
+          "Disattiveghja e mudificazioni di messa à livellu.",
+        showScale:
+          "Rimpiazzeghja u percentuale di vicinanza da quellu di dimensione.",
       },
       stats: {
         title: "Statistiche",
@@ -41,8 +41,8 @@ export const translations = {
       install: {
         title: "Worldle",
         descritpionTitle: "Installà l’appiecazione :",
-        description: 
-         "Aghjunghje Worldle à u screnu d’accolta per ghjucà più prestu !",
+        description:
+          "Aghjunghje Worldle à u screnu d’accolta per ghjucà più prestu !",
         instructionTitle: "Istruzzioni :",
         instructionActionOk: "Vai",
         instructionActionCancel: "Abbandunà",
@@ -51,10 +51,10 @@ export const translations = {
         instructionFirefoxAction2: "- aghjunghje à u screnu d’accolta",
         instructionFirefoxNewAction1: "- apre l’ozzioni di u navigatore ",
         instructionFirefoxNewAction2: "- selezziunà « Installà »",
-        instructionIdeviceAction1: 
-         "- nant’à Safari, apre u listinu di spartimentu ",
-        instructionIdeviceAction2: 
-         "- selezziunà « Aghjunghje à u screnu d’accolta »",
+        instructionIdeviceAction1:
+          "- nant’à Safari, apre u listinu di spartimentu ",
+        instructionIdeviceAction2:
+          "- selezziunà « Aghjunghje à u screnu d’accolta »",
         instructionOperaAction1: "- appughjà nant’à u buttone di listinu ",
         instructionOperaAction2: "- aghjunghje à u screnu d’accolta",
         instructionNotSupported: "Impussibule nant’à stu navigatore.",
