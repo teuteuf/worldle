@@ -5,7 +5,7 @@ import { initReactI18next } from "react-i18next";
 export const translations = {
   co: {
     translation: {
-      placeholder: "Paese, territorii…",
+      placeholder: "Paese o territoriu…",
       guess: "Induvinà",
       share: "Sparte",
       showOnGoogleMaps: "👀 nant’à Google Maps",
@@ -31,12 +31,12 @@ export const translations = {
       },
       stats: {
         title: "Statistiche",
-        played: "Ghjucate",
-        win: "Vittorie %",
+        played: "Partite ghjucate",
+        win: "% di vittorie",
         currentStreak: "Seria attuale",
         maxStreak: "Seria massima",
         averageBestDistance: "Mediana di e più belle distanze",
-        guessDistribution: "Spartimentu di e vittorie",
+        guessDistribution: "Classificazione di e vittorie",
       },
       install: {
         title: "Worldle",
