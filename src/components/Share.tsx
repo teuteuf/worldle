@@ -65,7 +65,7 @@ export function Share({
 
   const share = () => {
     const [title, guessString, url] = shareText.split("\n");
-    const data = { title, text: guessString, url };
+    const data = { title, text: `${title}\n${guessString}`, url };
     navigator.canShare && navigator.canShare(data) && navigator.share(data);
   };
 
