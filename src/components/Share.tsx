@@ -63,17 +63,38 @@ export function Share({
     return [title, guessString, "https://worldle.teuteuf.fr"].join("\n");
   }, [dayString, guesses, hideImageMode, rotationMode, theme]);
 
-  return (
-    <CopyToClipboard
-      text={shareText}
-      onCopy={() => toast(t("copy"))}
-      options={{
-        format: "text/plain",
-      }}
-    >
-      <button className="rounded font-bold border-2 p-1 uppercase bg-green-600 hover:bg-green-500 active:bg-green-700 text-white w-full">
+  const share = () => {
+    const [title, guessString, url] = shareText.split("\n");
+    const data = { title, text: guessString, url };
+    navigator.canShare && navigator.canShare(data) && navigator.share(data);
+  };
+
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
+    navigator.userAgent
+  );
+
+  if (!isMobile || !navigator.canShare) {
+    return (
+      <CopyToClipboard
+        text={shareText}
+        onCopy={() => toast(t("copy"))}
+        options={{
+          format: "text/plain",
+        }}
+      >
+        <button className="rounded font-bold border-2 p-1 uppercase bg-green-600 hover:bg-green-500 active:bg-green-700 text-white w-full">
+          {t("share")}
+        </button>
+      </CopyToClipboard>
+    );
+  } else {
+    return (
+      <button
+        className="rounded font-bold border-2 p-1 uppercase bg-green-600 hover:bg-green-500 active:bg-green-700 text-white w-full"
+        onClick={share}
+      >
         {t("share")}
       </button>
-    </CopyToClipboard>
-  );
+    );
+  }
 }
