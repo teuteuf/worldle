@@ -7,7 +7,11 @@ import React, {
   useState,
 } from "react";
 import { toast } from "react-toastify";
-import { getCountryName, sanitizeCountryName } from "../domain/countries";
+import {
+  getCountryCode,
+  getCountryName,
+  sanitizeCountryName,
+} from "../domain/countries";
 import { CountryInput } from "./CountryInput";
 import * as geolib from "geolib";
 import { Share } from "./Share";
@@ -27,6 +31,9 @@ interface GameProps {
   settingsData: SettingsData;
   updateSettings: (newSettings: Partial<SettingsData>) => void;
 }
+
+export type MouseOverFunction = (event: any) => void;
+export type MouseOutFunction = (event: any) => void;
 
 export function Game({ settingsData, updateSettings }: GameProps) {
   const { t, i18n } = useTranslation();
@@ -125,6 +132,17 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     };
   }, [todays, i18n.resolvedLanguage]);
 
+  const [hoverCountry, setHoverCountry] = useState("");
+
+  const activateComparison: MouseOverFunction = (event: Event) => {
+    const countryName = (event.target as HTMLElement).innerText;
+    setHoverCountry(countryName);
+  };
+
+  const deactivateComparison: MouseOutFunction = (event: Event) => {
+    setHoverCountry("");
+  };
+
   return (
     <div className="flex-grow flex flex-col mx-2">
       {hideImageMode && !gameEnded && (
@@ -139,7 +157,7 @@ export function Game({ settingsData, updateSettings }: GameProps) {
           />
         </button>
       )}
-      <div className="flex my-1">
+      <div className="flex my-1" style={{ position: "relative" }}>
         {settingsData.allowShiftingDay && settingsData.shiftDayCount > 0 && (
           <button
             type="button"
@@ -152,20 +170,62 @@ export function Game({ settingsData, updateSettings }: GameProps) {
             <Twemoji text="↪️" className="text-xl" />
           </button>
         )}
-        <img
-          className={`pointer-events-none max-h-52 m-auto transition-transform duration-700 ease-in dark:invert ${
-            hideImageMode && !gameEnded ? "h-0" : "h-full"
-          }`}
-          alt="country to guess"
-          src={`images/countries/${country?.code.toLowerCase()}/vector.svg`}
-          style={
-            rotationMode && !gameEnded
-              ? {
-                  transform: `rotate(${randomAngle}deg) scale(${imageScale})`,
-                }
-              : {}
-          }
-        />
+        <div className="flex flex-grow" style={{ position: "relative" }}>
+          <div
+            className="pointer-events-none max-h-52 m-auto transition-transform duration-700 ease-in"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            {gameEnded &&
+              guesses.map((guess) => (
+                <div
+                  key={guess.name}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    opacity: hoverCountry === guess.name ? 0.5 : 0,
+                  }}
+                >
+                  <img
+                    className={`pointer-events-none max-h-52 m-auto transition-transform duration-700 ease-in dark:invert ${
+                      hideImageMode && !gameEnded ? "h-0" : "h-full"
+                    }`}
+                    alt="country to guess"
+                    src={`images/countries/${getCountryCode(
+                      i18n.language,
+                      guess.name
+                    )}/vector.svg`}
+                    style={
+                      rotationMode && !gameEnded
+                        ? {
+                            transform: `rotate(${randomAngle}deg) scale(${imageScale})`,
+                          }
+                        : {}
+                    }
+                  />
+                </div>
+              ))}
+          </div>
+          <img
+            className={`pointer-events-none max-h-52 m-auto transition-transform duration-700 ease-in dark:invert ${
+              hideImageMode && !gameEnded ? "h-0" : "h-full"
+            }`}
+            alt="country to guess"
+            src={`images/countries/${country?.code.toLowerCase()}/vector.svg`}
+            style={
+              rotationMode && !gameEnded
+                ? {
+                    transform: `rotate(${randomAngle}deg) scale(${imageScale})`,
+                  }
+                : {}
+            }
+          />
+        </div>
         {settingsData.allowShiftingDay && settingsData.shiftDayCount < 7 && (
           <button
             type="button"
@@ -197,6 +257,8 @@ export function Game({ settingsData, updateSettings }: GameProps) {
         guesses={guesses}
         settingsData={settingsData}
         countryInputRef={countryInputRef}
+        onMouseOver={activateComparison}
+        onMouseOut={deactivateComparison}
       />
       <div className="my-2">
         {gameEnded && country ? (
