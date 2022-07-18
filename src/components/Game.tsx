@@ -32,8 +32,12 @@ interface GameProps {
   updateSettings: (newSettings: Partial<SettingsData>) => void;
 }
 
-export type MouseOverFunction = (event: any) => void;
-export type MouseOutFunction = (event: any) => void;
+export type MouseOverFunction = (
+  event: React.MouseEvent<Element, MouseEvent>
+) => void;
+export type MouseOutFunction = (
+  event: React.MouseEvent<Element, MouseEvent>
+) => void;
 
 export function Game({ settingsData, updateSettings }: GameProps) {
   const { t, i18n } = useTranslation();
@@ -54,6 +58,8 @@ export function Game({ settingsData, updateSettings }: GameProps) {
   );
 
   const [currentGuess, setCurrentGuess] = useState("");
+  const [hoverCountry, setHoverCountry] = useState("");
+
   const [hideImageMode, setHideImageMode] = useMode(
     "hideImageMode",
     dayString,
@@ -132,14 +138,14 @@ export function Game({ settingsData, updateSettings }: GameProps) {
     };
   }, [todays, i18n.resolvedLanguage]);
 
-  const [hoverCountry, setHoverCountry] = useState("");
-
-  const activateComparison: MouseOverFunction = (event: Event) => {
+  const activateComparison = (event: React.MouseEvent | React.TouchEvent) => {
+    event.stopPropagation();
     const countryName = (event.target as HTMLElement).innerText;
     setHoverCountry(countryName);
   };
 
-  const deactivateComparison: MouseOutFunction = (event: Event) => {
+  const deactivateComparison = (event: React.MouseEvent | React.TouchEvent) => {
+    event.stopPropagation();
     setHoverCountry("");
   };
 
