@@ -22,7 +22,7 @@ export function Infos({ isOpen, close, settingsData }: InfosProps) {
         <div>Each guess must be a valid country, territory, ...</div>
         <div>
           After each guess, you will have the distance, the direction and the
-          proximity from your guess to the target country.
+          proximity from your guess to the target location.
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
