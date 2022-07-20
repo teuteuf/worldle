@@ -25,7 +25,7 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
         </div>
         <div>
           Dopu à ogni colpu, ottinerete a distanza, a direzzione è a vicinanza
-          trà a vostra prova è u paese à induvinà.
+          trà a vostra prova è u locu à induvinà.
         </div>
       </div>
       <div className="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
@@ -44,8 +44,8 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
           />
           <div className="my-2">
             U vostru colpu <span className="uppercase font-bold">Cile</span> hè
-            à {formatDistance(13557000, settingsData.distanceUnit)} di u paese à
-            induvinà, quellu paese si trova in direzzione di u nordeste è site
+            à {formatDistance(13557000, settingsData.distanceUnit)} di u locu à
+            induvinà, quellu locu si trova in direzzione di u nordeste è site
             solu à 32% di vicinanza perchè u vostru colpu hè quantunque
             alluntanatu !
           </div>
@@ -84,7 +84,7 @@ export function InfosCo({ isOpen, close, settingsData }: InfosProps) {
           />
           <div className="my-2">
             L’ultimu colpu, <span className="uppercase font-bold">Libanu</span>,
-            hè u paese à induvinà ! Bellu colpu !{" "}
+            hè u locu à induvinà ! Bellu colpu !{" "}
             <Twemoji text="🎉" options={{ className: "inline-block" }} />
           </div>
         </div>
