@@ -17,6 +17,7 @@ import {
 import { areas } from "../domain/countries.area";
 import { countries } from "../domain/countries.position";
 import { useTranslation } from "react-i18next";
+import { MouseOverFunction, MouseOutFunction } from "./Game";
 
 const SQUARE_ANIMATION_LENGTH = 250;
 type AnimationState = "NOT_STARTED" | "RUNNING" | "ENDED";
@@ -26,6 +27,8 @@ interface GuessRowProps {
   guess?: Guess;
   settingsData: SettingsData;
   countryInputRef?: React.RefObject<HTMLInputElement>;
+  onMouseOver?: MouseOverFunction;
+  onMouseOut?: MouseOutFunction;
 }
 
 export function GuessRow({
@@ -33,6 +36,8 @@ export function GuessRow({
   guess,
   settingsData,
   countryInputRef,
+  onMouseOver,
+  onMouseOut,
 }: GuessRowProps) {
   const { i18n } = useTranslation();
   const { distanceUnit, theme } = settingsData;
@@ -123,7 +128,11 @@ export function GuessRow({
       return (
         <>
           <div className="flex items-center justify-center border-2 h-8 col-span-3 animate-reveal rounded">
-            <p className="text-ellipsis overflow-hidden whitespace-nowrap">
+            <p
+              className="text-ellipsis overflow-hidden whitespace-nowrap"
+              onMouseOver={onMouseOver}
+              onMouseOut={onMouseOut}
+            >
               {guess?.name.toUpperCase()}
             </p>
           </div>

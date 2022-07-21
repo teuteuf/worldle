@@ -3,13 +3,15 @@ import { GuessRow } from "./GuessRow";
 import React from "react";
 import { SettingsData } from "../hooks/useSettings";
 import { Country } from "../domain/countries";
-
+import { MouseOverFunction, MouseOutFunction } from "./Game";
 interface GuessesProps {
   targetCountry?: Country;
   rowCount: number;
   guesses: Guess[];
   settingsData: SettingsData;
   countryInputRef?: React.RefObject<HTMLInputElement>;
+  onMouseOver?: MouseOverFunction;
+  onMouseOut?: MouseOutFunction;
 }
 
 export function Guesses({
@@ -18,6 +20,8 @@ export function Guesses({
   guesses,
   settingsData,
   countryInputRef,
+  onMouseOver,
+  onMouseOut,
 }: GuessesProps) {
   return (
     <div>
@@ -29,6 +33,8 @@ export function Guesses({
             guess={guesses[index]}
             settingsData={settingsData}
             countryInputRef={countryInputRef}
+            onMouseOver={onMouseOver}
+            onMouseOut={onMouseOut}
           />
         ))}
       </div>

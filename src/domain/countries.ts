@@ -51,10 +51,45 @@ export function getCountryName(language: string, country: Country) {
   }
 }
 
+const frenchCountryCodes = mapFlip(frenchCountryNames);
+const hungarianCountryCodes = mapFlip(hungarianCountryNames);
+const dutchCountryCodes = mapFlip(dutchCountryNames);
+const polishCountryCodes = mapFlip(polishCountryNames);
+const englishCountryCodes = countries.reduce((acc, country: Country) => {
+  acc[country.name.toUpperCase()] = country.code;
+  return acc as Record<string, string>;
+}, {} as Record<string, string>);
+
+export function getCountryCode(language: string, countryName: string) {
+  switch (language) {
+    case "fr":
+      return frenchCountryCodes[countryName];
+    case "hu":
+      return hungarianCountryCodes[countryName];
+    case "nl":
+      return dutchCountryCodes[countryName];
+    case "pl":
+      return polishCountryCodes[countryName];
+    default:
+      return englishCountryCodes[countryName];
+  }
+}
+
 export function sanitizeCountryName(countryName: string): string {
   return countryName
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[- '()]/g, "")
     .toLowerCase();
+}
+
+function mapFlip(map: Record<string, string>): Record<string, string> {
+  const entries = Object.entries(map);
+
+  const output: Record<string, string> = {};
+  for (const [toVal, toKey] of entries) {
+    output[toKey] = toVal;
+  }
+
+  return output;
 }
